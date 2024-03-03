@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="assets/favicon.ico">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link href="assets/css/app.css" rel="stylesheet">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="">
+  <title>YouTube mp4 mp3 converter</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="assets/css/chunk-vendors.be9ef956.css" rel="stylesheet">
+  <link href="assets/css/app.e310e148.css" rel="stylesheet">
+  <style>
+    /* Modal CSS */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 50px;
+      width: 50%;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* Media query for mobile devices */
+    @media (max-width: 767px) {
+      .modal-content {
+        width: 100%;
+        padding: 25px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero-text {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <main>
+      <header id="navbar">
+        <div class="container">
+          <div class="topnav" id="myTopnav">
+            <div class="nav-logo"><a href="#" class="navbar-brand waves-effect">YouTube mp4 mp3
+                converter</a></div>
+            <div class="nav-item" itemscope="" itemtype="">
+              <div class="dropdown">
+                <div class="dropbtn dropdown-title">English <svg xmlns="http://www.w3.org/2000/svg" width="12"
+                    height="10" viewBox="0 0 16 8" fill="none">
+                    <path
+                      d="M15.0449 0.291415C14.8464 0.0929657 14.5239 0.0929657 14.3255 0.291415L7.9999 6.6294L1.66192 0.291415C1.46347 0.0929657 1.14099 0.0929657 0.942538 0.291415C0.744089 0.489865 0.744089 0.812346 0.942538 1.0108L7.62781 7.69606C7.72703 7.79529 7.85107 7.8449 7.9875 7.8449C8.11153 7.8449 8.24796 7.79529 8.34719 7.69606L15.0325 1.0108C15.2433 0.812346 15.2433 0.489865 15.0449 0.291415Z"
+                      fill="#ffffff"></path>
+                  </svg></div>
+                <div class="dropdown-content"><a class="dropdown-item" href="">English</a><a class="dropdown-item"
+                    href="">العربية</a><a class="dropdown-item" href="">Türkçe</a><a class="dropdown-item"
+                    href="">हिन्दी / Hindī</a><a class="dropdown-item" href="">Français</a><a class="dropdown-item"
+                    href="">Español</a><a class="dropdown-item" href="">Indonesian</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="container container-main">
+        <div class="ftco-section center" id="convert">
+          <h1 class="title"> 🔥 Super Fast YouTube to MP3/MP4 Converter 🔥</h1>
+          <p>Best free tool to download convert YouTube videos to video &amp; audio mp3</p>
+          <div id="search-form" class="search-form relative">
+            <input class="search__input" id="s_input" type="search" name="q" aria-label="Search"
+              placeholder="Search or paste Youtube link here">
+            <button id="start" class="btn-red" type="button">Start</button>
+          </div>
+          <div id="loader-wrapper" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200px"
+              height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"
+              style="margin: auto; background: rgb(255, 255, 255); display: block;">
+              <g transform="translate(20 50)">
+                <circle cx="0" cy="0" r="6" fill="#e15b64">
+                  <animateTransform attributeName="transform" type="scale" begin="-0.375s" calcMode="spline"
+                    keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s"
+                    repeatCount="indefinite">
+                  </animateTransform>
+                </circle>
+              </g>
+              <g transform="translate(40 50)">
+                <circle cx="0" cy="0" r="6" fill="#f8b26a">
+                  <animateTransform attributeName="transform" type="scale" begin="-0.25s" calcMode="spline"
+                    keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s"
+                    repeatCount="indefinite">
+                  </animateTransform>
+                </circle>
+              </g>
+              <g transform="translate(60 50)">
+                <circle cx="0" cy="0" r="6" fill="#abbd81">
+                  <animateTransform attributeName="transform" type="scale" begin="-0.125s" calcMode="spline"
+                    keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s"
+                    repeatCount="indefinite">
+                  </animateTransform>
+                </circle>
+              </g>
+              <g transform="translate(80 50)">
+                <circle cx="0" cy="0" r="6" fill="#81a3bd">
+                  <animateTransform attributeName="transform" type="scale" begin="0s" calcMode="spline"
+                    keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="1s"
+                    repeatCount="indefinite">
+                  </animateTransform>
+                </circle>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="content" data-v-41ea2a67="">
+          <div class="ftco-section center" data-v-41ea2a67="">
+            <h2 class="title" data-v-41ea2a67="">The best online YouTube video downloader</h2>
+            <p class="mw70" data-v-41ea2a67="">Free tool to help you download video from Youtube to your computer for
+              free. In addition, it supports converting to many different formats and qualities for download.</p>
+            <ul class="listitem items-mvore" data-v-41ea2a67="">
+              <li data-v-41ea2a67="">
+                <div class="post-content" data-v-41ea2a67="">
+                  <h3 class="" data-v-41ea2a67=""><img class="mx-2"
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAC2ElEQVRYR8WXTWgTURDHZzaJISapIqigF8GDZ/HjYPWQBOtHepAcFLEXDz1asSBIajQhH1gUkXqwevHiQUXEj4oSSaIVRU/S3hTFm7QWxCa7oiR94+y2CdvQTTa7W7uw7LLvvfn/5s28eW8RHL7Cmd+bQaKTICgGCFvY/Bq+JZ3MH37/SQSTkgsvoFP64Ux5D6B0je3taBI0liAYsw3QPTwTXFX13UCE46aF60gEH20B7B9WNtVq9JiN7LQ4k58tA/QkKxtqbnzBcd5uIK4QQIqq/utqO3qUUyx2kV/9uv7TlgAOJGfXVT2u52xot4G4YPFzpaHAZX17KCufZcFLulBZASAM55SrQDDQIuYzJMS+UqLr0yKAdHkbStIb/rZ+4XvnAKFcJYaEd9iAr0XcrQGocZ3zwC0CPMzGPRYTSx1mLgQEE40cODRC3r8V+S6nyxEbwvqhZpLwZQMgklN6ieh+m6l1iK1RCFIagOZ9WXnAS6rXYYVW5soSiagGEE7LPVytHzat0eVmKXiD/iiukPcKCIgVE4E8roD3gkM9Uoz7Bznhuahk5Kf/N/b0RFQDx14lUd2WAcNZeYqfG5c74Jp93v3cNTqYTwZ/1PUwlK2MImB/i7LqFNtrd5WO6sW1GTCyru7z3pqvwO27bBIIdv0mT/tgfdr19gwBIhn5BCHc5s52SrKCiH2FuP+RkRNLAsyXZeUZD4rY9H4aRK27mFj7tSMArThl5Sv8OGMzN6wDcNzM7PvtJsgOgLZu7ELYBTCAIJji9aOe91sdStTBTgDMQ0SycooPKlFCTEgw94VIGjdRwJwCWBzqcPrXVpDcb00AfHcL1958wvet41XQKrvMAnAduVeK+/mHBfmQvPRl6VhuAkCtfmPuKvQ3l95mDKcBBHs9LhGcLgwFJtutUbXdKQDV4/eErsFSfPUHM8L1PpYAFkr1KBvp43sCSAwUz3e960S43vcfeLwySUFXo40AAAAASUVORK5CYII="
+                      data-v-41ea2a67="">Quick and easy</h3>
+                  <p class="" data-v-41ea2a67="">Our Youtube video downloader helps you quickly search and download any
+                    Youtube video to formats like: MP4, WEBM, M4A ...</p>
+                </div>
+              </li>
+              <li data-v-41ea2a67="">
+                <div class="post-content" data-v-41ea2a67="">
+                  <h3 class="" data-v-41ea2a67=""><img class="mx-2"
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABK0lEQVRYR2NkGGDAOMD2Mwx/B7xLDtcBetOH4T/DFqG5K6+ghzhNQ+BNXKg0IyvTIaClSkD8noHpf6Tw7FU7kR1BUwe8TAtXZvnLcBRooTjUUgxH0NsBIHegOGIgHIDiCMa3yeHzgSJxQMxE5ywJDgmQA14gxRGd3cBwb1A4YGCjgJZhjiUbwqyD54SByAUDmg2JK4gIld/ERhtZRfHb1DB3hn+My4GWCALxvf+//9mJLFr9lFhL0dUR8gxKGkCzHGTWyz/MDNbis1beJdcBhPTBHYDFcvo5AIfl9HEAHssJhR6l8v+ABiwCFcWg+AU1GAYCvBwEDkDNdvQMBUgUgGwc0EQI8/KAZkM8jqBfQYTDERQXxYQSFdbqmFD5TchQUuRp2h4gxiGjDgAAIVe8sUMK1o8AAAAASUVORK5CYII="
+                      data-v-41ea2a67="">Unlimited YouTube downloads</h3>
+                  <p class="" data-v-41ea2a67="">Support downloading and converting unlimited Youtube videos with the
+                    best transfer speed up to 1GB/s.</p>
+                </div>
+              </li>
+              <li data-v-41ea2a67="">
+                <div class="post-content" data-v-41ea2a67="">
+                  <h3 class="" data-v-41ea2a67=""><img class="mx-2"
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEHElEQVRYR72XSWhTWxjHz3etbVPTJ04V3kJwABGsYtMIKo9XfaKW1qE3SRurOOC4EJz6dPHUhfh4qFXUnbpQi7VpbFpxdqMRERdpC+rCjSt3ThRstdrWc/yfeJPeXO+UQl4gJPec7/y/3/m+M3yX2Ag+FZc2FfZ6Pq0nRg0YPgPf14KJxuL+367GN1/+mo0kZWNcFqmZNYophwRjazCuyGTsFwje+M74se5wxys32o4AFY8q8vreTqxiTPwDQR++igthDpsuxuhf7+QPd+KL40NWYywBSpurxhXmFRzkgrbDaJwLp6YmiFaPQuLC16Fvx1+uu9NjNMoEEIz8keACTuIIOpbAeLSTYxLsiiDqwRrY6AA6CJiHiqCjiXDbM0YMj4hRykF5ixpkRKfwPMXJqb4fKme7wrE9ulT9h/6ZDql6w4TY37m2vS0JUN6qLhKCbo0k1CkAPZRcrIpQDmN6NWgvNJuQTA2RWJkE8LUGTiKUcktl/TEDSIlo62inEMouLOLfjeKCWONPgEjgDP7szto7BtgBpPWwtsqjgUoYH0fb7FS7HPv/AGgejRNNA/hbgg2CxMmcRUAT9kcCUTgNpfyQoL+1CKhbcaxezDUAInAfDpcPp0Bs0wCCy7At29ExJlsIV2sAoguiofEDnD+Ew7maj89YGqoGsGY6MeUpjoXJuQIoj4ZmMs6fQH+S5uM9U5Q/fgJEQ2OJ80f4Oy9XAL4WtZ6IrkA/T/pA5J7nK8qS9EmI/FzCw6bcAQQuELFt6QXI2PVEOFY7DGAgdAviZg3Maaopyc9X4tCcpeniumE7E2tjF9MA86OhqZxzaTSiu8AOuCwSrFaYiMLGk8o/52xpd33sRcZtaNynbqLgFIEZdysLxn4qkpdOtU7vXmddrEreiBkAJqSODE4AvsgvWxzFCW3pDLc1SfEMAFnr9Xl676G9wtGzZmAHYKGXKPAM/vV09c3eXwBkAwoSFcXFVV2+bFnsAJDS3ehvTG09/A7ixN2MgqRZtxsy9TVqeSpWuomCFQDOllLi4r7hGo57+4sr9ZWzaU3oi6hl6HiADE10gjAD0LYdnOsPNvEBtsu7wu3dek3LotQkfKYsRgDN+W2ZTd2AIThqwMFz1ihiCZBMRVFfK2q3VXZR0AP4m9VpYhTdgH1pxhiim94v3jqzlxZLAClgMZsM7SRAXWyvP6LWImXnsLFLMg3E44FBUftiQ8c7s4nYAuggDPkclkJJ3oGLbBIq6oVoNb60JAYGeLWVc9NtaEaZjMRoisLJn06LMt0v7GduuQ2tHMg18dnTexoh32EyU/0wjrCeH9NfvM/Ni6pjCoxA/ms1K4SinEe72aX1BunYkajvkClz9ckaQKom34LeTdiAquIAHpOv5zjUT3hLPjbZvYiaEf0AqGuxHlBBRyEAAAAASUVORK5CYII="
+                      data-v-41ea2a67="">Safety and Security</h3>
+                  <p class="" data-v-41ea2a67="">The converted and downloaded files are kept the same quality and
+                    content as YouTube's.</p>
+                </div>
+              </li>
+              <li data-v-41ea2a67="">
+                <div class="post-content" data-v-41ea2a67="">
+                  <h3 class="" data-v-41ea2a67=""><img class="mx-2"
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAgCAYAAADqgqNBAAAEJklEQVRYR8VXXWgcVRQ+Z+becaMVLVVpEdI+SNGnGiz1Z6NWN4lVEUSSvijBH3ywL4rgg1KwhQgiIj6I+tLSB0WIQYQiptldg3ZDRRCrIJHiiz74gy0tKGbde2eO32xmJ5udv92a4sCF3Tk/3znnnr9h+h8fHgRbZskz1+gR9uUeyJWIeROJ/IXfTXF5UZ813/B+avWrsxC8DbhZP8ZMz0HpTTgqR7kFbVmE3tTnzXtFhmSCyyFyzKh+hkkOEvHWfr1Z45PfhHhGN8w7fIiCNPlUcJmnbVbpWQiUcQqjk2OYgFZX1kzzPvq1ly+huFXXe0hoFoTtg3ubLgELfoIL+72K+aqbYx34pQDugKUZsA7c1LxXiOTF/xjqvIB9q8hUeIzOhUxt8DC5/Dvd+1zHP2l9vYhXuzcq5D16hIWOqXHzZAxu6+5DFDhvgDKNvLycHJ4D8eoMA8JyOoNTRY1fWMfDTgn5MkIsXvQ+1DHcxTOE3/9QIJN6wtY59NqOep/A/304c3rMTtmafgt3dKAn/AEJ1xQ5T/N48+eNiAyburoLSj+Gss0452H1w0rs95Z0Hf93RSArMGxGNeyrYc2GBrdu93ayI0MS8Ip3qnWmU8vdtFDWoWAY9T7SMZYdvk4Cud5n9wU2NfUSrn5mzcvIe1yFiPM+3g/BoBldsYfjxsP0MsJ7bew90x/oaoc7DaVV088imV4HPasbIrBykE3VOwHlE11hvNC5kyj8e5Rr7qXP6W9/VL8NqacylFoAHnEb5gDdQiVb0p8hnW/NvB7hBYRdL8OLG9cxiXykluwU3UFbraO2Iw9OhUkZReLKnPv+kzl4VFX844jo84joa+B1U/mZfgjD/guYtvUwxN533oPvQ/BNFifa6rWFDQtlNR/lUlIMVwVwfRaULSnUedVoPdhJJFPVDYQx7PX5j9CSHjejrSpGL6McU3W3VZzLAac4hKvlqJcgcFsRNuhfqoYpm7Le1Qd4atgjDI69HzTspqr2YtkIS/iqjDtH2NMSbo079v4iEq6nhHtMaCdcstR6Df1CrZj76WtqbnypJZpMIkj2kjWZ1oLezU67JFIyPjak7/barF22Ey31BBrOjpzkbLfx1cFSRg0zP1KQyYWDpX9dUSKHgGZBVQrGaLdd4Uj9Dudke6QytRTZI1gQfrdVPS1M74IWjs6sJ07ieJPJGKPFZR214ubdpWFt/SrAb8gRSi4TIbMs0iZsMcfxc28xYsyxNoSq+iiAHwclb9tdVoEZ4wlCS+9hXFks7VCB/2li0GRZE3ntl71JuHQUbFdksqZssMnVeUHfzC590IcBWYtHAh8D5sdAaMqbMKe7iekfDTXaYkkdQ2AeALOT7k3uytURGeyjIZbK/1xqe00+6ewqucjPpW5P0z8UZU659omUNXugD8V/AdleLrV8dqAiAAAAAElFTkSuQmCC"
+                      data-v-41ea2a67="">Support all devices</h3>
+                  <p class="" data-v-41ea2a67="">a website-based Youtube video downloader that works well on all
+                    platforms such as Windows, Mac or Linux, Android, iPhone ... without downloading or installing any
+                    software.</p>
+                </div>
+              </li>
+              <li data-v-41ea2a67="">
+                <div class="post-content" data-v-41ea2a67="">
+                  <h3 class="" data-v-41ea2a67=""><img class="mx-2"
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAgCAYAAAB6kdqOAAACC0lEQVRYR2NkGGSAcZC5h2HUQYRiZPCH0IfMKME/P//5AyPTmfH/f1EgrcXw/z872GeMjCCan5Avsch/BJrxE2rGT4b/DNf+MzK+BtJ7WdiZNgpMX/YepgceQv+B1r1Pjij7z/C/ASjJQYal5Gr5wcjA2CA4d0UX0DH/4Q56mxSWCgyBqUBTWck1mQJ9v4EhmC08b9VssINeZYXyMP9k2gNkmlNgKKVaT/5l/+cCdtDrpFB1Rkamw0COKKWmkqsfmGRe////zxbsoLfJkR4MDP/WAplc5BpIBX3fGBiYgqEOCk8BGjibCoZSakQq1EERJcAE3k2iaS8Z/zMUA7NFLVCfOol6cShnLIWF0ASginwSDX35h5nBWuzWy4fvlcWTgWmgDqhfikQz0JVPpNhB4rNW3oVkDD9eJgbOJmBBmgHkkluOUc9BMK++iQuVZmRhnAAs04KAYkwkhhj1HQRzwNvECCsGpv9zoOmLWIeNAAc9TwwVZWNknDbgUQZK1MyMXJXAyjkHGE28JKYdmHLKo0xs1sp771IiwoCVYx8Vsz15BSPQEXnAVks+MKtbkJGjsAQiomAcbFXHIKtc3yeF6/9j/L8XGPzCZCZGKmj7/5bpP6MztD0ELvb3AtOCKRVMJs+I/wyn/zF8hzgIBAZVExbkoEHXyIeF1KDpBpEX8dTXNfh7rtT3M2kmAgD+3ugGVqRSCwAAAABJRU5ErkJggg=="
+                      data-v-41ea2a67="">Supports many formats</h3>
+                  <p class="" data-v-41ea2a67="">Our tool supports converting many video and audio formats. You can
+                    easily convert YouTube videos to 3GP, MP4, WMA, M4A, FLV, WEBM and MO formats, etc.</p>
+                </div>
+              </li>
+              <li data-v-41ea2a67="">
+                <div class="post-content" data-v-41ea2a67="">
+                  <h3 class="" data-v-41ea2a67=""><img class="mx-2"
+                      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAgCAYAAADqgqNBAAAD3UlEQVRYR8VXW0gUURg+/+wqQpKmZbtRIVTQhYQggkpqtt1RK0ILFboQQm/RQwS9VJBB9RJED9FzhBVUdCGybNd2C7vQS2B0gQqkwl3N9RIKortz+s5ss83OnnFLDQeGnf1v33cu/3/+Q+wfnoYb7/KH5pau0Yn5FMYLOGOFxNiwzmhU4Sxc1Bd/c7Nx1djfhoTvxI8AHJhfuo84PwzLFXjdE3gkoPvAiS7M6Ym35CLiDN7MlYAvBlB2CgHLc5GU6Ls4sZOhsKeFNZMu85eC+0PfS8ntugzlNjgpkwA2XXQsTStPJJvaAwvj9jhZ4NrTb8sYd9+F4copgNpd3zNK1AU3L/pkVWSA14Sj5UliD2GwfBqBzVAfXZxtfeTzdpmCNLga7i3Mo+R9KNT/AGyGjIxz146Ir2xYCNLgWjh6Ef8OWmX/gQRnnF0K+ryH0uDak5ifKfotcCl2APxMxA8U9Qy8Giyb0wy7o7aUQ4rxc8W9A82iDnCFt0C/VB6LDzJdqQ9u8bQbI9ci0Zv4qXcAHuE67Q1t8dwz9EhBTY0+AgHtjz0PBiPeGjOlAk9itaTwq9DPcoh5K6h6G0gLd69lRAjGSi2GYiSXxrn7uCvJZ7V3lP2w5mpVpPsqZ7Tnz8bh1x6rC/am/UHQX9k7L+mikTxKnAFRsZzW4hRnnNeQFokdA9DpzLXOHImVffWLbyX6mDsC2WqL/K2Sn1DbNizqzxqpdKaw8oxOCPA2gFdZnYjZRmJRBsJRlYiJOlBkEQ9xzupCPq8glfXYZyplQI8BHv2AL3tef0ZOatacNCPKZyo1kqDqOWtH/l07gpDbN+BHAd4NhVdCOI7d+ADv5dm9/c/NQ0I2U+ZIAF4tvsVh9LOsZCMYNeHdDpF1P5lQUQHe56C08kkgyBcQeQ2hqPeyYKJ2t8JuHeyW4Hui00/Ejv8tuGwppyozwJ2mfarBc/kb0y7bcLkcp0MvNlx2qk1H5NwxjFSTFRnDtQOFozY56l6vKKwRFa0C9WAx5Pl4CyXBxUmF/o2+ok506jq74SpIvERBEmW50mb/u8jIyysSl+6GVM/O3COY2CIQid0BmTqbVaq8CqHsYIEillSU6vZN8zsnS8D/rKfCpettGKbHFiN1sBjgzkdqxuH/LyScmxPbkWoQkDcTIM0e6onkflkD6ERGNKCK23UF+q14ra1adjMhguRoo7qw2Y7gzL7n1AYbRFInWC3wzuNfuYScvI0ShjkaSDEL37FRbhNXrpu3E/MWw0nfjb5gF2wW2kZrcnBuIE2LGWudTQIzdmlIr9NMXZesG2VmLoqSrTrdV+Rfgx3SYI0BsjMAAAAASUVORK5CYII="
+                      data-v-41ea2a67="">Free forever</h3>
+                  <p class="" data-v-41ea2a67="">The tool is 100% free and always will be. You can support us by sending
+                    and sharing this tool with your friends. Thank you!</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="ftco-section center" data-v-41ea2a67="">
+            <h2 class="title" data-v-41ea2a67="">Online YouTube video downloader</h2>
+            <ul class="listicon" data-v-41ea2a67="">
+              <!-- <li data-v-41ea2a67=""><img src="" alt="Tool convert Youtube to MP4" data-v-41ea2a67=""></li>
+              <li data-v-41ea2a67=""><img src="" alt="Tool convert Youtube to 3GP" data-v-41ea2a67=""></li>
+              <li data-v-41ea2a67=""><img src="" alt="Tool convert Youtube to WEBM" data-v-41ea2a67=""></li>
+              <li data-v-41ea2a67=""><img src="" alt="Tool convert Youtube to M4A" data-v-41ea2a67=""></li> -->
+            </ul>
+            <p class="mw70" data-v-41ea2a67="">Download Youtube videos easily with the "Youtube Downloader" tool.
+              Support downloading and convert YouTube video with the best quality to formats MP4, 3GP, WEBM, M4A ...
+              fast and completely free. This YouTube downloader application is compatible with all devices such as:
+              computers, tablets and mobile phones ...</p>
+          </div>
+          <div class="ftco-section center" data-v-41ea2a67="">
+            <h2 class="title" data-v-41ea2a67="">The easiest YouTube video download guide</h2>
+            <ul class="listicon liststep" data-v-41ea2a67="">
+              <li data-v-41ea2a67=""><span class="number mx-2" data-v-41ea2a67="">1</span> <span class=""
+                  data-v-41ea2a67="">Paste the YouTube link or enter keywords in the search box</span></li>
+              <li data-v-41ea2a67=""><span class="number mx-2" data-v-41ea2a67="">2</span> <span class=""
+                  data-v-41ea2a67="">Select the output format you want to transfer and click the "Download"
+                  button.</span></li>
+              <li data-v-41ea2a67=""><span class="number mx-2" data-v-41ea2a67="">3</span> <span class=""
+                  data-v-41ea2a67="">Wait a few seconds for the conversion to complete and download the file. Simple,
+                  easy to use.</span></li>
+            </ul>
+          </div>
+          <div class="ftco-section section-left" data-v-41ea2a67="">
+            <h2 class="title text-center" data-v-41ea2a67="">Frequently Asked Questions</h2>
+            <div class="ftco-section" data-v-41ea2a67="">
+              <h3 data-v-41ea2a67="">Is youtube downloader have a limit of usage?</h3>
+              <p class="p-2" data-v-41ea2a67="">Absolutely NO. Our tool allows you to convert and download in unlimited
+                quantities and all for free.</p>
+              <h3 data-v-41ea2a67="">Can I download videos on mobile?</h3>
+              <p class="p-2" data-v-41ea2a67="">Our tool works well on all devices such as PCs, smartphones and tablets.
+              </p>
+              <h3 data-v-41ea2a67="">Where is the Youtube video stored after downloading</h3>
+              <p class="p-2" data-v-41ea2a67="">Please check the "Downloads" folder in your phone or the "download
+                history" section of your browser.</p>
+              <h3 data-v-41ea2a67="">What languages support ?</h3>
+              <p class="p-2" data-v-41ea2a67="">we support download Youtube video in all popular languages today.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- contact form -->
+      <div id="contactModal" class="modal" style="z-index: 1000;">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <!-- Your form goes here -->
+          <form action="" id="contactForm" method="post" role="form">
+            <div class="row gy-2 gx-md-3">
+              <div class="col-md-6 form-group">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                  style="width: 100%;" required>
+              </div>
+              <div class="col-md-6 form-group">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                  style="width: 100%;" required>
+              </div>
+              <div class="form-group col-12">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                  style="width: 100%;" required>
+              </div>
+              <div class="form-group col-12">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" style="width: 100%;"
+                  required></textarea>
+              </div>
+              <div class="text-center col-12 mt-5"><button type="button" class="btn " onclick="return false;" style="background-color: #28a745; color: white
+                  ;">Send
+                  Message</button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <footer>
+        <div class="copyright">
+          <ul class="flex flex-a-i-center">
+            <li>
+              <p class="">© 2024 YouTube mp4 mp3 converter</p>
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="contactBtn"><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script>
+    document.getElementById('start').addEventListener('click', function () {
+      document.getElementById('loader-wrapper').style.display = 'block';
+    });
+  </script>
+
+  <script>
+    // JavaScript to handle modal
+    document.addEventListener('DOMContentLoaded', function () {
+      const modal = document.getElementById('contactModal');
+      const btn = document.querySelector('.contactBtn');
+      const closeBtn = document.querySelector('.close');
+      // Display modal when "Contact Us Now!" is clicked
+      btn.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent the default action of the anchor link
+        modal.style.display = 'block';
+      });
+
+      // Hide modal when close button is clicked
+      closeBtn.addEventListener('click', function () {
+        modal.style.display = 'none';
+      });
+      // Hide modal when clicking outside the modal
+      window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+
+  </script>
+</body>
+
+</html>
