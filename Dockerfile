@@ -4,6 +4,7 @@ RUN apt-get update
 RUN apt-get -y install nginx
 
 COPY index.html /var/www/html/index.html
+COPY assets/css /var/www/html/assets/css
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
