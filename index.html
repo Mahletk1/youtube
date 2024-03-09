@@ -19,6 +19,10 @@
   <link href="assets/css/chunk-vendors.be9ef956.css" rel="stylesheet">
   <link href="assets/css/app.e310e148.css" rel="stylesheet">
   <style>
+    body {
+      top: 0 !important;
+    }
+
     /* Modal CSS */
     .modal {
       display: none;
@@ -61,32 +65,106 @@
         display: none;
       }
     }
+
+    #google_translate_element,
+    .skiptranslate {
+      display: none;
+    }
+
+    .translated-content {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* Style the dropdown container */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Style the select element */
+    #language-select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-color: transparent;
+      border: 1px solid #ced4da;
+      padding: 8px 30px 8px 12px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #495057;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    /* Style the custom dropdown toggle */
+    .dropdown-toggle {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 5px 5px 0 5px;
+      border-color: #fff transparent transparent transparent;
+      pointer-events: none;
+      margin-top: 5px;
+    }
+
+    /* Hide the dropdown icon added by Bootstrap */
+    .dropdown-toggle::after {
+      display: none !important;
+    }
+
+    /* Hover effect */
+    .dropdown:hover .dropdown-toggle {
+      border-color: #fff transparent transparent transparent;
+    }
+
+    #language-select {
+      border: none;
+      outline: none;
+      margin-top: 10px;
+      color: white;
+      background: #29960d;
+      /* Optional: Removes the outline when the select element is focused */
+    }
+
+    /* Change the background color of the dropdown when it is open */
+    #language-select:focus {
+      background-color: #29960d;
+    }
   </style>
 </head>
 
 <body>
+  <div id="google_translate_element"></div>
   <div>
     <main>
-      <header id="navbar">
+      <header id="navbar" class="notranslate">
         <div class="container">
           <div class="topnav" id="myTopnav">
             <div class="nav-logo"><a href="#" class="navbar-brand waves-effect">YouTube mp4 mp3
                 converter</a></div>
             <div class="nav-item" itemscope="" itemtype="">
               <div class="dropdown">
-                <div class="dropbtn dropdown-title">English <svg xmlns="http://www.w3.org/2000/svg" width="12"
-                    height="10" viewBox="0 0 16 8" fill="none">
-                    <path
-                      d="M15.0449 0.291415C14.8464 0.0929657 14.5239 0.0929657 14.3255 0.291415L7.9999 6.6294L1.66192 0.291415C1.46347 0.0929657 1.14099 0.0929657 0.942538 0.291415C0.744089 0.489865 0.744089 0.812346 0.942538 1.0108L7.62781 7.69606C7.72703 7.79529 7.85107 7.8449 7.9875 7.8449C8.11153 7.8449 8.24796 7.79529 8.34719 7.69606L15.0325 1.0108C15.2433 0.812346 15.2433 0.489865 15.0449 0.291415Z"
-                      fill="#ffffff"></path>
-                  </svg></div>
-                <div class="dropdown-content"><a class="dropdown-item" href="">English</a><a class="dropdown-item"
-                    href="">العربية</a><a class="dropdown-item" href="">Türkçe</a><a class="dropdown-item"
-                    href="">हिन्दी / Hindī</a><a class="dropdown-item" href="">Français</a><a class="dropdown-item"
-                    href="">Español</a><a class="dropdown-item" href="">Indonesian</a>
-                </div>
+                <select id="language-select" onchange="changeLanguage(this.value)">
+                  <option value="en">English</option>
+                  <option value="fr">French</option>
+                  <option value="de">German</option>
+                  <option value="ar">العربية</option>
+                  <option value="tr">Türkçe</option>
+                  <option value="hi">हिन्दी / Hindī</option>
+                  <option value="es">Español</option>
+                  <option value="id">Indonesian</option>
+                  <!-- Add more options as needed -->
+                </select>
+                <div class="dropdown-toggle"></div>
               </div>
             </div>
+
           </div>
         </div>
       </header>
@@ -327,6 +405,22 @@
     });
 
   </script>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+
+    function changeLanguage(langCode) {
+      var selectElement = document.querySelector("#google_translate_element select");
+      selectElement.value = langCode;
+      selectElement.dispatchEvent(new Event('change'));
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
 </body>
 
 </html>
